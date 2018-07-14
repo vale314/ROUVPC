@@ -10,6 +10,7 @@
   }
   
   #header #logo {
+    position: absolute;
     float: left;
   }
   
@@ -25,6 +26,14 @@
     #header #logo img {
       max-height: 40px;
     }
+
+    #header{
+      max-height: 40px;
+      position: static;
+      background: black;
+    }
+
+
   }
   
   #header.header-fixed {
@@ -35,17 +44,21 @@
   }
 
 
-
-  #hero {
+  
+  #heros {
     width: 100%;
     height: 100vh;
     background: url(https://images.pexels.com/photos/18174/reflection-pad-gaming-gamepad.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) top center;
     background-size: cover;
     position: relative;
+    
   }
   
   @media (min-width: 1024px) {
     #hero {
+      background-attachment: fixed;
+    }
+    #heros {
       background-attachment: fixed;
     }
   }
@@ -59,8 +72,18 @@
     left: 0;
     right: 0;
   }
+
+  #heros:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
   
-  #hero .hero-container {
+  #hero hero-container {
     position: absolute;
     bottom: 0;
     top: 0;
@@ -71,9 +94,54 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+    z-index: 5;
+    color: #FFF;
+    text-shadow: none;
+  }
+
+  #heros hero-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 5;
+    color: #FFF;
+    text-shadow: none;
+  }
+
+  .hero-container{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 5;
+    color: #FFF;
+    text-shadow: none;
   }
   
   #hero h1 {
+    margin: 30px 0 10px 0;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 56px;
+    font-family: Raleway, sans-serif;
+    color: #fff;
+    letter-spacing:5px;
+  }
+
+  #heros h1 {
     margin: 30px 0 10px 0;
     font-size: 48px;
     font-weight: 300;
@@ -88,6 +156,10 @@
       font-size: 28px;
       line-height: 36px;
     }
+    #heros h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
   }
   
   #hero h2 {
@@ -95,9 +167,21 @@
     margin-bottom: 50px;
     font-size: 24px;
   }
+
+  #heros h2 {
+    color: #eee;
+    margin-bottom: 50px;
+    font-size: 24px;
+  }
   
   @media (max-width: 768px) {
     #hero h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+
+    #heros h2 {
       font-size: 18px;
       line-height: 24px;
       margin-bottom: 30px;
@@ -117,8 +201,27 @@
     border: 2px solid #fff;
     color: #fff;
   }
+
+  #heros .btn-get-started {
+    font-family: Raleway, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+  }
   
   #hero .btn-get-started:hover {
+    background: #2dc997;
+    border: 2px solid #2dc997;
+  }
+
+  #heros .btn-get-started:hover {
     background: #2dc997;
     border: 2px solid #2dc997;
   }
@@ -142,12 +245,102 @@
     border: 2px solid #fff;
     color: #fff;
   }
+
+  #heros .btn-get-started {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+  }
   
   #hero .btn-get-started:hover {
     background: #2dc997;
     border: 2px solid #2dc997;
   }
   
+  #heros .btn-get-started:hover {
+    background: #2dc997;
+    border: 2px solid #2dc997;
+  }
   .colored{
     color:#E48632
   }
+
+
+
+
+
+/******/
+
+
+  .hero-unit {
+    position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+
+#bgvid {
+  width: 100%;
+  height: 100%;
+}
+
+
+/****StanGeek****/
+
+.hero-container-2, .row-35 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.column-71 {
+  display: block;
+}
+
+.w-col-6 {
+  width: 50%;
+}
+
+.w-col {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.card{
+  background:transparent;
+  width: 18rem;
+  transition:background-color   .5s;
+}
+
+#gamer:hover{
+  background:#E81B1B;
+  cursor: pointer;
+}
+
+#develoment:hover{
+  background:#0071c5;
+  cursor: pointer;
+}
+
+#video{
+  display: none;
+}
